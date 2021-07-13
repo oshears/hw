@@ -61,7 +61,7 @@ help:
 
 #define XILINX_HOME in your environment to override this
 ifeq ($(origin XILINX_HOME), undefined)
-  export XILINX_HOME   := /home/tools/Xilinx/SDx/2017.1/Vivado
+  export XILINX_HOME   := /home/oshears/Xilinx/Vivado/2020.2
 endif
 
   SIMULATOR    := xsim
@@ -117,10 +117,10 @@ TOPDIR       := ${dir ${shell ${PWD}}}
 DUTDIR       := ${TOPDIR}dut
 SIMDIR       := ${TOPDIR}sim_vivado
 SYNTHTBDIR   := ${TOPDIR}synth_tb
-VLIBDIR      := ${TOPDIR}../outdir/nv_full/vmod/vlibs
-VMODINCDIR   := ${TOPDIR}../outdir/nv_full/vmod/include
+VLIBDIR      := ${TOPDIR}../outdir/nv_small/vmod/vlibs
+VMODINCDIR   := ${TOPDIR}../outdir/nv_small/vmod/include
 ifeq (${DESIGNWARE_NOEXIST},1)
-DWDIR        := ${TOPDIR}../outdir/nv_full/vmod/vlibs
+DWDIR        := ${TOPDIR}../outdir/nv_small/vmod/vlibs
 DWFILES      := ${DWDIR}/NV_DW02_tree.v \
                     ${DWDIR}/NV_DW_lsd.v \
                     ${DWDIR}/NV_DW_minmax.v

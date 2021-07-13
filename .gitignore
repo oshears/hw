@@ -10,3 +10,10 @@ vmod/dw_components/
 outdir/
 .nvprojectname
 tree.make
+
+*.log
+*.jou
+*.str
+
+vivado/.Xil
+vivado/.ip_user_files
