@@ -891,5 +891,5 @@ synth_design -top NV_nvdla \
 
 # synth_design -top NV_nvdla -part xczu7ev-ffvc1156-2-e -verilog_define DESIGNWARE_NOEXIST=1 -verilog_define NV_FPGA_SYSTEM=1 -verilog_define VIVADO=1 -verilog_define NVTOOLS_SYNC2D_GENERIC_CELL=1 -verilog_define NO_PERFMON_HISTOGRAM=1 -verilog_define PRAND_OFF=1 -constrset constrs_1
 
-write_verilog NV_nvdla_netlist_small.v
-write_edf NV_nvdla_netlist_small.edf
+write_verilog NV_nvdla_small_netlist.v
+write_edf NV_nvdla_small_netlist.edf
