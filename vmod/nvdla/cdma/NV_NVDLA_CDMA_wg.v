@@ -205,7 +205,7 @@ reg      [13:0] data_height;
 reg       [9:0] data_surf;
 reg      [11:0] data_width_ext;
 reg       [4:0] delay_cnt;
-reg       [3:0] dma_rsp_size;
+wire       [3:0] dma_rsp_size;
 reg       [3:0] dma_rsp_size_cnt;
 reg      [31:0] dp2reg_wg_rd_latency;
 reg      [31:0] dp2reg_wg_rd_stall;

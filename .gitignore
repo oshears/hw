@@ -15,3 +15,8 @@ tree.make
 *.log
 *.Xil
 *.str
+
+nvdla_small_netlist_project
+
+*netlist.edf
+*netlist.v
