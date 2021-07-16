@@ -10,3 +10,8 @@ outdir/
 .nvprojectname
 tree.make
 .cleaned
+
+*.jou
+*.log
+*.Xil
+*.str
