@@ -134,7 +134,10 @@ endif
 # ----------------------------------------------------------------------------
 # FILE AND LOG NAMES
 
-DUTFILE      := ${DUTDIR}/dut.vivado.f 
+# DUTFILE      := ${DUTDIR}/dut.vivado.f 
+# DUTFILE      := ${DUTDIR}/dut.vivado.netlist.f 
+# DUTFILE      := ${DUTDIR}/dut.vivado.small_org.f 
+DUTFILE      := ${DUTDIR}/dut.vivado.small.f 
 COMPILELOG   := ${SIMULATOR}.compile.log
 TRACELOG     := trace.log
 TESTDIR      ?= ../traces/traceplayer/sanity0
@@ -177,7 +180,8 @@ else
 		    ${TBDIR}/slave2mem_wr.v \
                     ${DWFILES}
 		#TB_FILES       := ${TBDIR}/tb_top.v ${NOT_TOP_TB_FILES}
-		TB_FILES       := ${NOT_TOP_TB_FILES} ${TBDIR}/tb_top.v
+		# TB_FILES       := ${NOT_TOP_TB_FILES} ${TBDIR}/tb_top.v
+		TB_FILES       := ${NOT_TOP_TB_FILES} ${TBDIR}/tb_top_nv_small.v
 
                 #Two step way to ensure we don't create a lower higherarchy with new files
 		TB_PREP := ${MKDIR} -p ${SIMTESTDIR} ; \
@@ -466,9 +470,11 @@ check_cde_tests:
 # Build the example testbench 
 ${XILINX_EXECUTABLE}:
 	${LSF_COMMAND} $(XILINX_HOME)/bin/xvlog timescale.v -f ${DUTFILE} ${XSIM_ARGS} ${TB_FILES} -L ${COMPILELOG} ${DUT_DEFINES}; $(XILINX_HOME)/bin/xelab top --debug all
+	# ${LSF_COMMAND} $(XILINX_HOME)/bin/xvlog timescale.v -f ${DUTFILE} ${XSIM_ARGS} ${TB_FILES} -L ${COMPILELOG} ${DUT_DEFINES}; $(XILINX_HOME)/bin/xelab top work.glbl --debug all -s top
 
 build : dut
 	${LSF_COMMAND} $(XILINX_HOME)/bin/xvlog timescale.v -f ${DUTFILE} ${XSIM_ARGS} ${TB_FILES} -L ${COMPILELOG} ${DUT_DEFINES}; $(XILINX_HOME)/bin/xelab top --debug all
+	# ${LSF_COMMAND} $(XILINX_HOME)/bin/xvlog timescale.v -f ${DUTFILE} ${XSIM_ARGS} ${TB_FILES} -L ${COMPILELOG} ${DUT_DEFINES}; $(XILINX_HOME)/bin/xelab top work.glbl --debug all -s top
 
 
 

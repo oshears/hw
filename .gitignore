@@ -17,3 +17,12 @@ tree.make
 
 vivado/.Xil
 vivado/.ip_user_files
+vivado/nvdla_small_netlist_project
+verif/sim_vivado/xsim.dir
+verif/sim_vivado/sanity0
+*.pb
+
+*netlist.edf
+*netlist.v
+
+.cleaned
